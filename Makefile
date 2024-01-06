@@ -4,6 +4,9 @@ CC = cc
 # Flags
 CFLAGS = -Wall -Wextra
 
+# Libraries
+CLIBS = -lm
+
 # Target binary
 TARGET = coordinate_converter
 
@@ -26,6 +29,7 @@ all: options $(TARGET)
 options:
 	@echo ${TARGET} build options:
 	@echo "CFLAGS = ${CFLAGS}"
+	@echo "CLIBS  = ${CLIBS}"
 	@echo "CC     = ${CC}"
 
 # Remake
@@ -33,7 +37,7 @@ remake: clean all
 
 # Make target
 $(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $(OBJ) $(CLIBS)
 
 # Compile to objects
 %.o: %.c
