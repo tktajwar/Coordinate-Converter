@@ -1,2 +1,5 @@
+# target file
+coordinate_converter
+
 # Object files
 *.o
